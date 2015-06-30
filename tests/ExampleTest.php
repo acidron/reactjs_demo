@@ -60,4 +60,15 @@ class ExampleTest extends TestCase
         $this->delete('/news/2')->seeJson(['deleted' => true]);
         $this->assertEquals(1, App\Message::all()->count());
     }
+    public function testEditProfile()
+    {
+        $user = factory('App\User')->create();
+        $this->actingAs($user);
+
+        $this->put('/profile', ['firstname' => 'Ivan', 'lastname' => 'Ivanov'])->seeJson(['changed' => true]);
+
+        $profile = App\User::findOrFail($user->id);
+        $this->assertEquals('Ivan', $profile->firstname);
+        $this->assertEquals('Ivanov', $profile->lastname);
+    }
 }
