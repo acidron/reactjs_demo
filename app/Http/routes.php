@@ -15,6 +15,15 @@ Route::get('/news', 'MessageCtrl@index');
 Route::get('/news/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
 Route::post('/news', 'MessageCtrl@store');
 Route::delete('/news/{id}', 'MessageCtrl@destroy')->where(['id' => '\d+']);
+Route::put('/profile', ['middleware' => 'auth', function(Illuminate\Http\Request $request) {
+	$firstname = $request->input('firstname');
+	$lastname  = $request->input('lastname');
+	$profile = App\User::findOrFail(Auth::id());
+	$profile->firstname = $firstname;
+	$profile->lastname = $lastname;
+	$profile->save();
+	return ['changed' => true];
+}]);
 
 
 Route::post('auth/login', 'Auth\AuthController@postLogin');
