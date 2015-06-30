@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return "hello";
-});
+Route::get('/news', 'MessageCtrl@index');
+Route::get('/news/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
+Route::put('/news', 'MessageCtrl@store');
+Route::delete('/news/{id}', 'MessageCtrl@destroy')->where(['id' => '\d+']);
+
+
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
