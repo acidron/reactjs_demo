@@ -15,7 +15,11 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call(UserTableSeeder::class);
+        factory('App\User')->create();
+        factory('App\Message', 17)->create();
 
-        Model::reguard();
+        /*DB::table('messages')->insert([
+            ]);
+        */Model::reguard();
     }
 }
