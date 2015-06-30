@@ -13,7 +13,7 @@
 
 Route::get('/news', 'MessageCtrl@index');
 Route::get('/news/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
-Route::put('/news', 'MessageCtrl@store');
+Route::post('/news', 'MessageCtrl@store');
 Route::delete('/news/{id}', 'MessageCtrl@destroy')->where(['id' => '\d+']);
 
 

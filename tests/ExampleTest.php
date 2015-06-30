@@ -28,7 +28,7 @@ class ExampleTest extends TestCase
     {
         $user = factory('App\User')->create();
         $this->actingAs($user);
-        $this->put('/news', ['message' => 'some message here'])->seeJson(['created' => true]);
+        $this->post('/news', ['message' => 'some message here'])->seeJson(['created' => true]);
 
         $message = App\Message::all()->first();
         $this->assertEquals('some message here', $message->message);
