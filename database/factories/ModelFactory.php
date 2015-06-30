@@ -13,9 +13,17 @@
 
 $factory->define(App\User::class, function ($faker) {
     return [
-        'name' => $faker->name,
+        'firstname' => $faker->name,
+        'lastname' => $faker->name,
         'email' => $faker->email,
         'password' => str_random(10),
         'remember_token' => str_random(10),
     ];
+});
+
+$factory->define(App\Message::class, function($faker) {
+	return [
+		'message' => $faker->realText(140),
+		'user_id' => 1
+	];
 });
