@@ -1,2 +1,82 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+	background: url(../imgs/bg_desktop.jpg) no-repeat top center;
+	background-size: auto;
+	font-family: Avenir-Book;
+}
+.logo {
+	position: relative;
+	height: 280px;
+	width: 150px;
+	transform: rotate(45deg);
+	.I {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 55px;
+		height: 280px;
+		background: #ffffff;
+		border-radius: 4px 4px 4px 0;
+	}
+	._ {
+		width: 95px;
+		height: 60px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: #FFFFFF;
+		background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 0.2) 100%);
+		border-radius: 4px 0 0 4px;
+	}
+}
 
+.signInForm {
+	width: 600px !important;
+	margin: 100px auto;
+
+	.form-control {
+		font-size: 28px;
+		height: 120px;
+		border-radius: 0;
+		line-height: 30px;
+		border-color: #F4F4F4;
+	}
+	input {
+		color: #1D1D26;
+		padding-top: 20px;
+		padding-left: 60px;
+		outline: none;
+	}
+	input[type=email] {
+		background: url(../imgs/email.png) no-repeat 10px 40px, #FFFFFF;
+	}
+	input[type=password] {
+		background: url(../imgs/password.png) no-repeat 10px 35px, #FFFFFF;
+	}
+	button {
+		font-size: 34px;
+		background: #BA77FF;
+		font-size: 34px;
+		color: #FFFFFF;
+		line-height: 30px;
+	}
+
+	a {
+		font-size: 26px;
+		color: #FFFFFF;
+		line-height: 30px;
+		transition: transform 0.5s, text-shadow 0.5s;
+		display: block;
+		margin-top: 90px;
+		&:hover {
+			text-decoration: none;
+			transform: scale(1.02);
+			text-shadow: 0 0 20px white;
+		}
+	}
+}
+
+@media screen and (max-width: 650px) {
+	body {
+		background: url(../imgs/bg_mobile.jpg) no-repeat center -200px;
+	}
+}
