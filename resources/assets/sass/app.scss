@@ -1,7 +1,11 @@
 body {
-	background: url(../imgs/bg_desktop.jpg) no-repeat top center;
 	background-size: auto;
 	font-family: Avenir-Book;
+
+	background: url(../imgs/bg_desktop.jpg) no-repeat top center;
+	@media screen and (max-width: 650px) {
+		background: url(../imgs/bg_mobile.jpg) no-repeat center -200px;
+	}
 }
 .logo {
 	position: relative;
@@ -46,6 +50,9 @@ body {
 		padding-left: 60px;
 		outline: none;
 	}
+	input[type=text] {
+		background: url(../imgs/ico_name.png) no-repeat 10px 40px, #FFFFFF;
+	}
 	input[type=email] {
 		background: url(../imgs/email.png) no-repeat 10px 40px, #FFFFFF;
 	}
@@ -65,7 +72,7 @@ body {
 		color: #FFFFFF;
 		line-height: 30px;
 		transition: transform 0.5s, text-shadow 0.5s;
-		display: block;
+		display: inline-block;
 		margin-top: 90px;
 		&:hover {
 			text-decoration: none;
@@ -75,8 +82,23 @@ body {
 	}
 }
 
-@media screen and (max-width: 650px) {
-	body {
-		background: url(../imgs/bg_mobile.jpg) no-repeat center -200px;
+.signUpForm {
+	@extend .signInForm;
+	margin-top: 300px;
+	.text {
+		a {
+
+			font-size: 26px;
+			color: #FFFFFF;
+			line-height: 30px;
+		}
+		
+		font-size: 26px;
+		color: #999999;
+		line-height: 30px;
+
+		position: absolute;
+		top: 60px;
+		margin-left: 125px;
 	}
 }

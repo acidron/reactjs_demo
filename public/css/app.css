@@ -5347,9 +5347,12 @@ button.close {
     display: none !important; } }
 
 body {
-  background: url(../imgs/bg_desktop.jpg) no-repeat top center;
   background-size: auto;
-  font-family: Avenir-Book; }
+  font-family: Avenir-Book;
+  background: url(../imgs/bg_desktop.jpg) no-repeat top center; }
+  @media screen and (max-width: 650px) {
+    body {
+      background: url(../imgs/bg_mobile.jpg) no-repeat center -200px; } }
 
 .logo {
   position: relative;
@@ -5375,46 +5378,58 @@ body {
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 0.2) 100%);
     border-radius: 4px 0 0 4px; }
 
-.signInForm {
+.signInForm, .signUpForm {
   width: 600px !important;
   margin: 100px auto; }
-  .signInForm .form-control {
+  .signInForm .form-control, .signUpForm .form-control {
     font-size: 28px;
     height: 120px;
     border-radius: 0;
     line-height: 30px;
     border-color: #F4F4F4; }
-  .signInForm input {
+  .signInForm input, .signUpForm input {
     color: #1D1D26;
     padding-top: 20px;
     padding-left: 60px;
     outline: none; }
-  .signInForm input[type=email] {
+  .signInForm input[type=text], .signUpForm input[type=text] {
+    background: url(../imgs/ico_name.png) no-repeat 10px 40px, #FFFFFF; }
+  .signInForm input[type=email], .signUpForm input[type=email] {
     background: url(../imgs/email.png) no-repeat 10px 40px, #FFFFFF; }
-  .signInForm input[type=password] {
+  .signInForm input[type=password], .signUpForm input[type=password] {
     background: url(../imgs/password.png) no-repeat 10px 35px, #FFFFFF; }
-  .signInForm button {
+  .signInForm button, .signUpForm button {
     font-size: 34px;
     background: #BA77FF;
     font-size: 34px;
     color: #FFFFFF;
     line-height: 30px; }
-  .signInForm a {
+  .signInForm a, .signUpForm a {
     font-size: 26px;
     color: #FFFFFF;
     line-height: 30px;
     transition: -webkit-transform 0.5s, text-shadow 0.5s;
     transition: transform 0.5s, text-shadow 0.5s;
-    display: block;
+    display: inline-block;
     margin-top: 90px; }
-    .signInForm a:hover {
+    .signInForm a:hover, .signUpForm a:hover {
       text-decoration: none;
       -webkit-transform: scale(1.02);
       transform: scale(1.02);
       text-shadow: 0 0 20px white; }
 
-@media screen and (max-width: 650px) {
-  body {
-    background: url(../imgs/bg_mobile.jpg) no-repeat center -200px; } }
+.signUpForm {
+  margin-top: 300px; }
+  .signUpForm .text {
+    font-size: 26px;
+    color: #999999;
+    line-height: 30px;
+    position: absolute;
+    top: 60px;
+    margin-left: 125px; }
+    .signUpForm .text a {
+      font-size: 26px;
+      color: #FFFFFF;
+      line-height: 30px; }
 
 /*# sourceMappingURL=app.css.map */
