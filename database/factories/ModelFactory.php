@@ -26,7 +26,7 @@ $factory->defineAs(App\User::class, 'testuser', function ($faker) {
         'firstname' => $faker->name,
         'lastname' => $faker->name,
         'email' => 'mine@localhost.net',
-        'password' => 'testuser',
+        'password' => Hash::make('testuser'),
         'remember_token' => str_random(10)
     ];
 });

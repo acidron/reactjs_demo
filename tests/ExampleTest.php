@@ -11,7 +11,6 @@ class ExampleTest extends TestCase
     
     public function testSignupUser()
     {       
-        $this->withoutMiddleware();
         $response = $this->call('POST', 'auth/register', [
                 'firstname' => 'John',
                 'lastname'  => 'Appleseed',
@@ -23,6 +22,11 @@ class ExampleTest extends TestCase
         $this->assertEquals('John', $user->firstname);
         $this->assertEquals('Appleseed', $user->lastname);
         
+    }
+    public function testSignin()
+    {
+        $user = factory('App\User', 'testuser')->create();
+        $this->post('/auth/login', ['email' => 'mine@localhost.net', 'password' => 'testuser'])->seeJson(['signedin' => true]);
     }
     public function testPostingNews()
     {
