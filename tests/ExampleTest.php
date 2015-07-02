@@ -28,7 +28,7 @@ class ExampleTest extends TestCase
     {
         $user = factory('App\User')->create();
         $this->actingAs($user);
-        $this->post('/news', ['message' => 'some message here'])->seeJson(['created' => true]);
+        $this->post('/messages', ['message' => 'some message here'])->seeJson(['created' => true]);
 
         $message = App\Message::all()->first();
         $this->assertEquals('some message here', $message->message);
@@ -41,12 +41,12 @@ class ExampleTest extends TestCase
         factory('App\Message', 17)->create();
 
         // get first 10 records
-        $request = $this->call('GET', 'news');
+        $request = $this->call('GET', 'messages');
         $data = json_decode($request->content());
         $this->assertEquals(10, count($data));
 
         // get another 10, although we have 17 in total, there are only 7 left
-        $request = $this->call('GET', 'news/2');
+        $request = $this->call('GET', 'messages/2');
         $data = json_decode($request->content());
         $this->assertEquals(7, count($data));
     }   
@@ -57,7 +57,7 @@ class ExampleTest extends TestCase
         $this->actingAs($user);
         // generate database
         factory('App\Message', 2)->create();
-        $this->delete('/news/2')->seeJson(['deleted' => true]);
+        $this->delete('/messages/2')->seeJson(['deleted' => true]);
         $this->assertEquals(1, App\Message::all()->count());
     }
     public function testEditProfile()

@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/news', 'MessageCtrl@index');
-Route::get('/news/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
-Route::post('/news', 'MessageCtrl@store');
-Route::delete('/news/{id}', 'MessageCtrl@destroy')->where(['id' => '\d+']);
+Route::get('/messages', 'MessageCtrl@index');
+Route::get('/messages/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
+Route::post('/messages', 'MessageCtrl@store');
+Route::delete('/messages/{id}', 'MessageCtrl@destroy')->where(['id' => '\d+']);
 Route::put('/profile', ['middleware' => 'auth', function(Illuminate\Http\Request $request) {
 	$firstname = $request->input('firstname');
 	$lastname  = $request->input('lastname');

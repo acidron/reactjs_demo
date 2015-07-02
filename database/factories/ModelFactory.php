@@ -16,8 +16,18 @@ $factory->define(App\User::class, function ($faker) {
         'firstname' => $faker->name,
         'lastname' => $faker->name,
         'email' => $faker->email,
-        'password' => str_random(10),
+        'password' => 'str_random(10)',
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->defineAs(App\User::class, 'testuser', function ($faker) {
+    return [
+        'firstname' => $faker->name,
+        'lastname' => $faker->name,
+        'email' => 'mine@localhost.net',
+        'password' => 'testuser',
+        'remember_token' => str_random(10)
     ];
 });
 
