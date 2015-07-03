@@ -1,0 +1,15 @@
+.fadeIn-appear {
+  opacity: 0.01;
+  transition: opacity .2s ease-in;
+
+  .slideUp {
+  	transform: translateY(2000px);
+  }
+}
+
+.fadeIn-appear.fadeIn-appear-active {
+  opacity: 1;
+  .slideUp {
+  	transform: translateY(0px);
+  }
+}

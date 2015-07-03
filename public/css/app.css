@@ -5380,7 +5380,9 @@ body {
 
 .signInForm, .signUpForm {
   width: 600px !important;
-  margin: 100px auto; }
+  margin: 100px auto;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s; }
   .signInForm .form-control, .signUpForm .form-control {
     font-size: 28px;
     height: 120px;
@@ -5418,18 +5420,32 @@ body {
       transform: scale(1.02);
       text-shadow: 0 0 20px white; }
 
+.signUpContainer .text {
+  font-size: 26px;
+  color: #999999;
+  line-height: 30px;
+  position: absolute;
+  top: 60px;
+  margin-left: 125px; }
+  .signUpContainer .text a {
+    font-size: 26px;
+    color: #FFFFFF;
+    line-height: 30px; }
+
 .signUpForm {
   margin-top: 300px; }
-  .signUpForm .text {
-    font-size: 26px;
-    color: #999999;
-    line-height: 30px;
-    position: absolute;
-    top: 60px;
-    margin-left: 125px; }
-    .signUpForm .text a {
-      font-size: 26px;
-      color: #FFFFFF;
-      line-height: 30px; }
+
+.fadeIn-appear {
+  opacity: 0.01;
+  transition: opacity 0.2s ease-in; }
+  .fadeIn-appear .slideUp {
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px); }
+
+.fadeIn-appear.fadeIn-appear-active {
+  opacity: 1; }
+  .fadeIn-appear.fadeIn-appear-active .slideUp {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
 
 /*# sourceMappingURL=app.css.map */
