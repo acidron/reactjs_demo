@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('', function() {
+	return View('index');
+});
 Route::get('/messages', 'MessageCtrl@index');
 Route::get('/messages/{page}', 'MessageCtrl@indexPage')->where(['page' => '\d+']);
 Route::post('/messages', 'MessageCtrl@store');
@@ -27,5 +29,8 @@ Route::put('/profile', ['middleware' => 'auth', function(Illuminate\Http\Request
 
 
 Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/isLogin', function() {
+	return ['signed' => Auth::check()];
+});
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
