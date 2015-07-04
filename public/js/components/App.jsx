@@ -1,7 +1,8 @@
 var App = React.createClass({
 	getInitialState: function() {
 		return {
-			url: this.props.url
+			url: Store.url,
+			isSignedIn: Store.isSignedIn
 		}
 	},
 	componentWillMount: function() {
@@ -11,25 +12,23 @@ var App = React.createClass({
 	},
 	render: function() {
 		var out;
-		console.log('URL is ', this.state.url);
-		switch (this.state.url) {
-			case 'signin':
-				out = <SignIn />;
-				break;
-			case 'signup':
+		if (!this.state.isSignedIn) {
+			if (this.state.url == 'signup') {
 				out = <SignUp />;
-				break;
-			case 'messages':
-				out = <Messages />;
-				break;
-			case 'profile':
-				out = <Profile />;
-				break;
-			default:
-				out = <Logo />;
-				break;
+			} else {
+				out = <SignIn />;
+			}
+		} else {
+			switch (this.state.url) {
+				case 'profile':
+					out = <Profile />;
+					break;
+				default:
+					out = <Messages />;
+					break;
+			}
 		}
 		return out;
 	}
 })
-React.render(<App url={Store.url}/>, document.body);
+React.render(<App />, document.body);

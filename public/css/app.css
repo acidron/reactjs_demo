@@ -5354,6 +5354,9 @@ body {
     body {
       background: url(../imgs/bg_mobile.jpg) no-repeat center -200px; } }
 
+a:hover {
+  text-decoration: none; }
+
 .logo {
   position: relative;
   height: 280px;
@@ -5406,6 +5409,10 @@ body {
     font-size: 34px;
     color: #FFFFFF;
     line-height: 30px; }
+  .signInForm.errors input, .errors.signUpForm input {
+    color: #ff6f6c; }
+  .signInForm.errors button, .errors.signUpForm button {
+    background-color: #ff6f6c; }
   .signInForm a, .signUpForm a {
     font-size: 26px;
     color: #FFFFFF;
@@ -5434,6 +5441,96 @@ body {
 
 .signUpForm {
   margin-top: 300px; }
+
+.messages {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+  .messages .body {
+    -webkit-flex: 100 1 auto;
+    -ms-flex: 100 1 auto;
+    flex: 100 1 auto; }
+  .messages .header {
+    height: 90px;
+    background-color: #bc73ff; }
+  .messages .body {
+    background-color: #ffffff;
+    height: 100%;
+    overflow-y: scroll; }
+  .messages .footer {
+    background-color: #ffffff;
+    height: 150px; }
+    .messages .footer .arrowDown {
+      display: inline-block;
+      position: relative;
+      top: 50px;
+      width: 50px;
+      height: 50px;
+      background: url(../imgs/ico_scroll.png) no-repeat top left; }
+  .messages .message {
+    margin: 0 0 30px; }
+    .messages .message .date {
+      font-size: 20px;
+      color: #8e8e8e;
+      line-height: 30px;
+      background: url(../imgs/ico_time.png) no-repeat 0 5px;
+      padding-left: 25px; }
+    .messages .message .text {
+      font-size: 26px;
+      color: #1D1D26;
+      line-height: 30px; }
+  .messages .newMessage {
+    width: 100%;
+    height: 180px;
+    border: 1px solid #bc73ff;
+    padding: 30px 100px 20px 20px;
+    position: relative;
+    margin: 30px 0; }
+    .messages .newMessage textarea {
+      width: 100%;
+      height: 130px;
+      font-family: Avenir-Book;
+      font-size: 30px;
+      color: #494949;
+      line-height: 30px;
+      border-style: none;
+      resize: none;
+      outline: none; }
+    .messages .newMessage .counter {
+      font-family: Avenir-Light;
+      font-size: 28px;
+      color: #BA77FF;
+      letter-spacing: 0.28px;
+      line-height: 28px;
+      position: absolute;
+      top: 34px;
+      right: 40px; }
+    .messages .newMessage button {
+      width: 52px;
+      height: 52px;
+      background: url(../imgs/ico_confirm_desktop.png) no-repeat top left;
+      border-style: none;
+      position: absolute;
+      bottom: 25px;
+      right: 30px; }
 
 .fadeIn-appear {
   opacity: 0.01;

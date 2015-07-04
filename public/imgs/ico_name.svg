@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="38px" viewBox="0 0 41 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_name</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="_Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Create-Account-(mobile)" sketch:type="MSArtboardGroup" transform="translate(-34.000000, -340.000000)">
+            <g id="Sign-Up" sketch:type="MSLayerGroup" transform="translate(20.000000, 300.000000)">
+                <g id="First-name-Copy" transform="translate(10.000000, 35.000000)" sketch:type="MSShapeGroup">
+                    <g id="ico_name">
+                        <path d="M24.5546461,27.1192425 C17.9248917,27.1192425 4.91092922,30.3457059 4.91092922,37.0468223 L4.91092922,42.0106123 L44.198363,42.0106123 L44.198363,37.0468223 C44.198363,30.3457059 31.1844006,27.1192425 24.5546461,27.1192425 L24.5546461,27.1192425 Z M24.5546461,23.245065 C29.4164661,23.245065 33.3943187,19.3224603 33.3943187,14.5281656 C33.3943187,9.73387097 29.4164661,5.81126625 24.5546461,5.81126625 C19.6928262,5.81126625 15.7149735,9.73387097 15.7149735,14.5281656 C15.7149735,19.3224603 19.6928262,23.245065 24.5546461,23.245065 L24.5546461,23.245065 Z" id="shape" stroke="#1D1D26" stroke-width="2" opacity="0.5"></path>
+                        <rect id="bounds" x="0" y="0" width="49.1092922" height="48.4272187"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
