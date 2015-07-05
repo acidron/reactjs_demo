@@ -5441,6 +5441,12 @@ a:hover {
 .signUpForm {
   margin-top: 300px; }
 
+.pagelayout .header .container > div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 .pagelayout {
   height: 100%;
   width: 100%;
@@ -5467,6 +5473,20 @@ a:hover {
     -webkit-flex: 100 1 auto;
     -ms-flex: 100 1 auto;
     flex: 100 1 auto; }
+    @media screen and (max-width: 768px) {
+      .pagelayout .body {
+        background-color: #ffffff; } }
+    @media screen and (min-width: 768px) {
+      .pagelayout .body {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   .pagelayout .header {
     height: 90px;
     background-color: #bc73ff;
@@ -5478,11 +5498,10 @@ a:hover {
     color: #FFFFFF;
     line-height: 30px;
     padding-top: 18px; }
+    @media screen and (max-width: 768px) {
+      .pagelayout .header {
+        text-align: center; } }
     .pagelayout .header .container > div {
-      position: relative;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
       margin-top: 25px; }
 
 .messages .body {

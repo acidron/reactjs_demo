@@ -1,3 +1,5 @@
+$mobilewidth: 768px;
+
 body {
 	background-size: auto;
 	font-family: Avenir-Book;
@@ -120,8 +122,13 @@ a:hover {
 
 .profileForm {
 	@extend .signInForm;
-}
 
+}
+%verticalAlignCenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .pagelayout {
 	height: 100%;
 	width: 100%;
@@ -134,6 +141,14 @@ a:hover {
     align-items: stretch;	
 	.body {
     	flex: 100 1 auto;
+    	@media screen and (max-width: $mobilewidth) {
+			background-color: #ffffff;
+		}
+		@media screen and (min-width: $mobilewidth) {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
     }
 	.header {
 		height: 90px;
@@ -144,10 +159,13 @@ a:hover {
 		color: #FFFFFF;
 		line-height: 30px;
 		padding-top: 18px;
+
+		@media screen and (max-width: $mobilewidth) {
+			text-align: center;
+		}
+
 		.container > div {
-			  position: relative;
-			  top: 50%;
-			  transform: translateY(-50%);
+			  @extend %verticalAlignCenter;
 			  margin-top: 25px;
 		}
 	}
