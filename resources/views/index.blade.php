@@ -10,7 +10,6 @@
 		<script type="text/jsx" src="js/components/Logo.js"></script>
 		<script type="text/jsx" src="js/components/SignIn.js"></script>
 		<script type="text/jsx" src="js/components/SignUp.js"></script>
-		<script type="text/jsx" src="js/components/SignForm.jsx"></script>
 		<script type="text/jsx" src="js/components/NewMessage.jsx"></script>
 		<script type="text/jsx" src="js/components/NewMessagePage.jsx"></script>
 		<script type="text/jsx" src="js/components/Messages.js"></script>
