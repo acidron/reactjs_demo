@@ -9,26 +9,37 @@ var App = React.createClass({
 		Store.on('change:url', function(url) {
 			this.setState({url: url});
 		}.bind(this));
+		Store.on('change:isSignedIn', function(value) {
+			this.setState({isSignedIn: value});
+		}.bind(this));
+
+		flux.doAction('checkAuth');
 	},
 	render: function() {
 		var out;
-		if (!this.state.isSignedIn) {
+		if (this.state.isSignedIn === false) {
 			if (this.state.url == 'signup') {
-				out = <SignUp />;
+				out = <SignUp key="signup"/>;
 			} else {
-				out = <SignIn />;
+				out = <SignIn key="signin" />;
 			}
-		} else {
+		} else if (this.state.isSignedIn === true) {
 			switch (this.state.url) {
 				case 'profile':
-					out = <Profile />;
+					out = <Profile key="profile"/>;
 					break;
 				default:
-					out = <Messages />;
+					out = <Messages key="messages"/>;
 					break;
 			}
+		} else {
+			out = <PleaseWait />;
 		}
-		return out;
+		return (
+			<ReactCSSTransitionGroup transitionName="fadeIn" transitionAppear={true}>
+				{out}
+			</ReactCSSTransitionGroup>
+		);
 	}
 })
 React.render(<App />, document.body);

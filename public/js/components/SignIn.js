@@ -49,21 +49,19 @@ var SignIn = React.createClass({
 		})
 
 		return (
-			<ReactCSSTransitionGroup transitionName="fadeIn" transitionAppear={true}>
-				<div key="signIn" className="container ">
-					<Logo />
-				
-					<div className="row">
-						<form action="" className={formCSS}>
-							<input className="form-control" type="email" placeholder="Email" ref="email" />
-							<input className="form-control" type="password" placeholder="Password"  ref="password" />
-							{btn}
-							<div className="text-center"><a href="#signup">Create Account</a></div>
-							
-						</form>
-					</div>
+			<div key="signIn" className="container">
+				<Logo />
+			
+				<div className="row">
+					<form action="" className={formCSS}>
+						<input className="form-control" type="email" placeholder="Email" ref="email" />
+						<input className="form-control" type="password" placeholder="Password"  ref="password" />
+						{btn}
+						<div className="text-center"><a href="#signup">Create Account</a></div>
+						
+					</form>
 				</div>
-			</ReactCSSTransitionGroup>
+			</div>
 		);
 	}
 });

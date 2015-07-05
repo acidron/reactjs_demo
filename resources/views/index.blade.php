@@ -6,6 +6,7 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/fluxify.min.js"></script>
 		<script type="text/jsx" src="js/Store.js"></script>
+		<script type="text/jsx" src="js/routes.js"></script>
 		<script type="text/jsx" src="js/components/Logo.js"></script>
 		<script type="text/jsx" src="js/components/SignIn.js"></script>
 		<script type="text/jsx" src="js/components/SignUp.js"></script>
@@ -14,8 +15,10 @@
 		<script type="text/jsx" src="js/components/Messages.js"></script>
 		<script type="text/jsx" src="js/components/Message.js"></script>
 		<script type="text/jsx" src="js/components/Profile.js"></script>
+		<script type="text/jsx" src="js/components/Header.jsx"></script>
+		<script type="text/jsx" src="js/components/PleaseWait.jsx"></script>
+		<script type="text/jsx" src="js/components/UserName.jsx"></script>
 		<script type="text/jsx" src="js/components/App.jsx"></script>
-		<script type="text/jsx" src="js/routes.js"></script>
 		<script>
 		var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 		$(function() {

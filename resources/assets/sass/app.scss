@@ -96,7 +96,7 @@ a:hover {
 }
 
 .signUpContainer {
-	.text {
+	.text-center {
 		a {
 
 			font-size: 26px;
@@ -108,9 +108,8 @@ a:hover {
 		color: #999999;
 		line-height: 30px;
 
-		position: absolute;
+		position: relative;
 		top: 60px;
-		margin-left: 125px;
 	}
 }
 
@@ -136,6 +135,18 @@ a:hover {
 	.header {
 		height: 90px;
 		background-color: #bc73ff;
+		flex-shrink: 0;
+		font-family: Avenir-Book;
+		font-size: 26px;
+		color: #FFFFFF;
+		line-height: 30px;
+		padding-top: 18px;
+		.container > div {
+			  position: relative;
+			  top: 50%;
+			  transform: translateY(-50%);
+			  margin-top: 25px;
+		}
 	}
 
 	.body {
@@ -170,6 +181,22 @@ a:hover {
 			line-height: 30px;
 		}
 		margin: 0 0 30px;
+
+		&.message-enter {
+			opacity: 0;
+			transform: translateX(100px);
+			transition: opacity 0.5s, transform 0.5s;
+			&.message-enter-active {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+		&.message-leave {
+			&.message-leave-active {
+				opacity: 0;
+				transform: translateX(-100px);
+			}
+		}
 	}
 	.newMessage {
 		width: 100%;

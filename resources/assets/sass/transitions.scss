@@ -1,15 +1,24 @@
-.fadeIn-appear {
+.fadeIn-enter, .fadeIn-appear {
   opacity: 0.01;
-  transition: opacity .2s ease-in;
+  transition: opacity 0.2s ease-in;
 
   .slideUp {
+  	transition: transform .5s ease-in;
   	transform: translateY(2000px);
   }
+
+&.fadeIn-enter-active, &.fadeIn-appear-active {
+	opacity: 1;
+		.slideUp {
+		transform: translateY(0px);
+		}
+	}
 }
 
-.fadeIn-appear.fadeIn-appear-active {
-  opacity: 1;
-  .slideUp {
-  	transform: translateY(0px);
-  }
+.fadeIn-leave {
+	opacity: 1;
+	transition: opacity 0.1s ease-in;
+	&.fadeIn-leave-active {
+		opacity: 0.01;
+	}
 }

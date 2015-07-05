@@ -5427,14 +5427,13 @@ a:hover {
       transform: scale(1.02);
       text-shadow: 0 0 20px white; }
 
-.signUpContainer .text {
+.signUpContainer .text-center {
   font-size: 26px;
   color: #999999;
   line-height: 30px;
-  position: absolute;
-  top: 60px;
-  margin-left: 125px; }
-  .signUpContainer .text a {
+  position: relative;
+  top: 60px; }
+  .signUpContainer .text-center a {
     font-size: 26px;
     color: #FFFFFF;
     line-height: 30px; }
@@ -5470,7 +5469,21 @@ a:hover {
     flex: 100 1 auto; }
   .messages .header {
     height: 90px;
-    background-color: #bc73ff; }
+    background-color: #bc73ff;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    font-family: Avenir-Book;
+    font-size: 26px;
+    color: #FFFFFF;
+    line-height: 30px;
+    padding-top: 18px; }
+    .messages .header .container > div {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      margin-top: 25px; }
   .messages .body {
     background-color: #ffffff;
     height: 100%;
@@ -5497,6 +5510,20 @@ a:hover {
       font-size: 26px;
       color: #1D1D26;
       line-height: 30px; }
+    .messages .message.message-enter {
+      opacity: 0;
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+      transition: opacity 0.5s, -webkit-transform 0.5s;
+      transition: opacity 0.5s, transform 0.5s; }
+      .messages .message.message-enter.message-enter-active {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0); }
+    .messages .message.message-leave.message-leave-active {
+      opacity: 0;
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px); }
   .messages .newMessage {
     width: 100%;
     height: 180px;
@@ -5532,17 +5559,24 @@ a:hover {
       bottom: 25px;
       right: 30px; }
 
-.fadeIn-appear {
+.fadeIn-enter, .fadeIn-appear {
   opacity: 0.01;
   transition: opacity 0.2s ease-in; }
-  .fadeIn-appear .slideUp {
+  .fadeIn-enter .slideUp, .fadeIn-appear .slideUp {
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
     -webkit-transform: translateY(2000px);
     transform: translateY(2000px); }
+  .fadeIn-enter.fadeIn-enter-active, .fadeIn-enter.fadeIn-appear-active, .fadeIn-appear.fadeIn-enter-active, .fadeIn-appear.fadeIn-appear-active {
+    opacity: 1; }
+    .fadeIn-enter.fadeIn-enter-active .slideUp, .fadeIn-enter.fadeIn-appear-active .slideUp, .fadeIn-appear.fadeIn-enter-active .slideUp, .fadeIn-appear.fadeIn-appear-active .slideUp {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
 
-.fadeIn-appear.fadeIn-appear-active {
-  opacity: 1; }
-  .fadeIn-appear.fadeIn-appear-active .slideUp {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px); }
+.fadeIn-leave {
+  opacity: 1;
+  transition: opacity 0.1s ease-in; }
+  .fadeIn-leave.fadeIn-leave-active {
+    opacity: 0.01; }
 
 /*# sourceMappingURL=app.css.map */

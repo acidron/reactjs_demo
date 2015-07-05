@@ -15,21 +15,26 @@ var Messages = React.createClass({
 	componentWillUnmount: function() {
 		Store.off('change:messages');
 	},
+	logout: function() {
+		if (confirm('You are signing out...')) flux.doAction('logout');
+	},
 	render: function() {
 		var messages = [];
 		this.state.messages.map(function(message) {
-			messages.push(<Message data={message} />);
+			messages.push(<Message key={message.id} data={message} />);
 		});
 		return (
 				<div className="container-fluid messages">
-					<div>
-						<div className="col-sm-12 header">header</div>
-					</div>
+					<Header />
 				
 					<div className="body">
-						<div className="col-sm-4 col-sm-push-4">
-							<NewMessage />
-							{messages}
+						<div className="container">
+							<div className="col-sm-8 col-sm-push-2">
+								<NewMessage />
+								<ReactCSSTransitionGroup transitionName="message">
+								{messages}
+								</ReactCSSTransitionGroup>
+							</div>
 						</div>
 					</div>
 

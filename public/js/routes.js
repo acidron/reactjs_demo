@@ -1,7 +1,4 @@
 routie({
-	'': function() {
-		flux.doAction('gotoUrl', '');
-	},
 	'signin': function() {
 		flux.doAction('gotoUrl', 'signin');
 	},
@@ -20,4 +17,7 @@ routie({
 	'*': function() {
 		routie('');
 	}
+});
+Store.on('change:url', function(newUrl) {
+	history.replaceState(null, null, '#' + newUrl);
 });
