@@ -75,7 +75,7 @@ class AuthController extends Controller
         $credentials = $this->getCredentials($request);
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
-            return response()->json(['signedin' => true]);
+            return response()->json(Auth::user());
         }
         return response()->json([
                 'email' => $this->getFailedLoginMessage(),

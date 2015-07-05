@@ -26,7 +26,15 @@ class ExampleTest extends TestCase
     public function testSignin()
     {
         $user = factory('App\User', 'testuser')->create();
-        $this->post('/auth/login', ['email' => 'mine@localhost.net', 'password' => 'testuser'])->seeJson(['signedin' => true]);
+        $this->post('/auth/login', ['email' => 'mine@localhost.net', 'password' => 'testuser'])
+            ->seeJson([
+                'email' => 'mine@localhost.net'
+            ]);
+
+        $json = json_decode($this->response->getContent());
+        
+        $this->assertObjectHasAttribute('firstname', $json);
+        $this->assertObjectHasAttribute('lastname', $json);
     }
     public function testPostingNews()
     {

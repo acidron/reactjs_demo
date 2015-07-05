@@ -30,7 +30,16 @@ Route::put('/profile', ['middleware' => 'auth', function(Illuminate\Http\Request
 
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/isLogin', function() {
-	return ['signed' => Auth::check()];
+	if (Auth::check()) {
+		$user = Auth::user();
+		return [
+			'signed' => true,
+			'firstname' => $user->firstname,
+			'lastname' => $user->lastname,
+		];
+	} else {
+		return ['signed' => false];	
+	}
 });
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
