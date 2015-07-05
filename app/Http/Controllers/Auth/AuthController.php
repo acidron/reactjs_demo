@@ -81,4 +81,15 @@ class AuthController extends Controller
                 'email' => $this->getFailedLoginMessage(),
             ], 401);
     }
+    public function postRegister(Request $request) {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        Auth::login($this->create($request->all()));
+        return response()->json(Auth::user());
+    }
 }
