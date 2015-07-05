@@ -97,7 +97,7 @@ var Store = fluxify.createStore({
 						});
 					}
 				}.bind(this))
-				.error(function(response){
+				.fail(function(response){
 					console.log('Error on deleting', response);
 				});			
 		},
@@ -107,8 +107,8 @@ var Store = fluxify.createStore({
 				lastname: lastname
 			};
 			$.ajax('profile', {method: 'PUT', data: payload})
-				.success(function() {
 					updater.set({profile: payload})
+				.then(function() {
 				})
 				.fail(function(response) {
 					console.log('Error on updating profile.', response);

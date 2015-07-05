@@ -22,7 +22,7 @@ var Profile = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="container-fluid pagelayout">
+			<div className="container-fluid pagelayout verticalAligned">
 				<Header title="Profile"/>
 				<div className="body row">
 					<form className="profileForm">

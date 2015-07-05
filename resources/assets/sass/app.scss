@@ -144,11 +144,6 @@ a:hover {
     	@media screen and (max-width: $mobilewidth) {
 			background-color: #ffffff;
 		}
-		@media screen and (min-width: $mobilewidth) {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-		}
     }
 	.header {
 		height: 90px;
@@ -282,7 +277,6 @@ a:hover {
 	}
 	.body {
 		background-color: #bc73ff;
-		justify-content: flex-start;
 		.newMessage {
 			text-align: center;
 			textarea {
@@ -306,5 +300,13 @@ a:hover {
 				display: none;
 			}
 		}
+	}
+}
+
+.verticalAligned .body {
+	@media screen and (min-width: $mobilewidth) {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
 }
