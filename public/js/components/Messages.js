@@ -21,8 +21,8 @@ var Messages = React.createClass({
 			messages.push(<Message key={message.id} data={message} />);
 		});
 		return (
-				<div className="container-fluid messages">
-					<Header />
+				<div className="container-fluid pagelayout messages">
+					<Header title="My Messages"/>
 				
 					<div className="body">
 						<div className="container">

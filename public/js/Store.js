@@ -100,6 +100,19 @@ var Store = fluxify.createStore({
 					console.log('Error on deleting', response);
 				});			
 		},
+		saveProfile: function(updater, firstname, lastname) {
+			var payload = {
+				firstname: firstname,
+				lastname: lastname
+			};
+			$.ajax('profile', {method: 'PUT', data: payload})
+				.success(function() {
+					updater.set({profile: payload})
+				})
+				.fail(function(response) {
+					console.log('Error on updating profile.', response);
+				});
+		},
 		logout: function(updater) {
 			$.get('auth/logout').success(function() {
 				updater.set({

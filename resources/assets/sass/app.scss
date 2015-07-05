@@ -118,7 +118,11 @@ a:hover {
 	margin-top: 300px;
 }
 
-.messages {
+.profileForm {
+	@extend .signInForm;
+}
+
+.pagelayout {
 	height: 100%;
 	width: 100%;
 	padding: 0;
@@ -127,9 +131,8 @@ a:hover {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-content: stretch;
-    align-items: stretch;
-
-    .body {
+    align-items: stretch;	
+	.body {
     	flex: 100 1 auto;
     }
 	.header {
@@ -148,6 +151,9 @@ a:hover {
 			  margin-top: 25px;
 		}
 	}
+}
+
+.messages {  
 
 	.body {
 		background-color: #ffffff;

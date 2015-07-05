@@ -5381,39 +5381,39 @@ a:hover {
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 0.2) 100%);
     border-radius: 4px 0 0 4px; }
 
-.signInForm, .signUpForm {
+.signInForm, .signUpForm, .profileForm {
   width: 600px !important;
   margin: 100px auto;
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s; }
-  .signInForm .form-control, .signUpForm .form-control {
+  .signInForm .form-control, .signUpForm .form-control, .profileForm .form-control {
     font-size: 28px;
     height: 120px;
     border-radius: 0;
     line-height: 30px;
     border-color: #F4F4F4; }
-  .signInForm input, .signUpForm input {
+  .signInForm input, .signUpForm input, .profileForm input {
     color: #1D1D26;
     padding-top: 20px;
     padding-left: 60px;
     outline: none; }
-  .signInForm input[type=text], .signUpForm input[type=text] {
+  .signInForm input[type=text], .signUpForm input[type=text], .profileForm input[type=text] {
     background: url(../imgs/ico_name.png) no-repeat 10px 40px, #FFFFFF; }
-  .signInForm input[type=email], .signUpForm input[type=email] {
+  .signInForm input[type=email], .signUpForm input[type=email], .profileForm input[type=email] {
     background: url(../imgs/email.png) no-repeat 10px 40px, #FFFFFF; }
-  .signInForm input[type=password], .signUpForm input[type=password] {
+  .signInForm input[type=password], .signUpForm input[type=password], .profileForm input[type=password] {
     background: url(../imgs/password.png) no-repeat 10px 35px, #FFFFFF; }
-  .signInForm button, .signUpForm button {
+  .signInForm button, .signUpForm button, .profileForm button {
     font-size: 34px;
     background: #BA77FF;
     font-size: 34px;
     color: #FFFFFF;
     line-height: 30px; }
-  .signInForm.errors input, .errors.signUpForm input {
+  .signInForm.errors input, .errors.signUpForm input, .errors.profileForm input {
     color: #ff6f6c; }
-  .signInForm.errors button, .errors.signUpForm button {
+  .signInForm.errors button, .errors.signUpForm button, .errors.profileForm button {
     background-color: #ff6f6c; }
-  .signInForm a, .signUpForm a {
+  .signInForm a, .signUpForm a, .profileForm a {
     font-size: 26px;
     color: #FFFFFF;
     line-height: 30px;
@@ -5421,7 +5421,7 @@ a:hover {
     transition: transform 0.5s, text-shadow 0.5s;
     display: inline-block;
     margin-top: 90px; }
-    .signInForm a:hover, .signUpForm a:hover {
+    .signInForm a:hover, .signUpForm a:hover, .profileForm a:hover {
       text-decoration: none;
       -webkit-transform: scale(1.02);
       transform: scale(1.02);
@@ -5441,7 +5441,7 @@ a:hover {
 .signUpForm {
   margin-top: 300px; }
 
-.messages {
+.pagelayout {
   height: 100%;
   width: 100%;
   padding: 0;
@@ -5463,11 +5463,11 @@ a:hover {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch; }
-  .messages .body {
+  .pagelayout .body {
     -webkit-flex: 100 1 auto;
     -ms-flex: 100 1 auto;
     flex: 100 1 auto; }
-  .messages .header {
+  .pagelayout .header {
     height: 90px;
     background-color: #bc73ff;
     -webkit-flex-shrink: 0;
@@ -5478,98 +5478,102 @@ a:hover {
     color: #FFFFFF;
     line-height: 30px;
     padding-top: 18px; }
-    .messages .header .container > div {
+    .pagelayout .header .container > div {
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       margin-top: 25px; }
-  .messages .body {
-    background-color: #ffffff;
-    height: 100%;
-    overflow-y: scroll; }
-  .messages .footer {
-    background-color: #ffffff;
-    height: 150px; }
-    .messages .footer .arrowDown {
-      display: inline-block;
-      position: relative;
-      top: 50px;
-      width: 50px;
-      height: 50px;
-      background: url(../imgs/ico_scroll.png) no-repeat top left; }
-  .messages .message {
+
+.messages .body {
+  background-color: #ffffff;
+  height: 100%;
+  overflow-y: scroll; }
+
+.messages .footer {
+  background-color: #ffffff;
+  height: 150px; }
+  .messages .footer .arrowDown {
+    display: inline-block;
     position: relative;
-    margin: 0 0 30px; }
-    .messages .message .date {
-      font-size: 20px;
-      color: #8e8e8e;
-      line-height: 30px;
-      background: url(../imgs/ico_time.png) no-repeat 0 5px;
-      padding-left: 25px; }
-    .messages .message .text {
-      font-size: 26px;
-      color: #1D1D26;
-      line-height: 30px; }
-      .messages .message .text img {
-        position: absolute;
-        right: 0;
-        top: 20px;
-        display: none;
-        cursor: pointer; }
-    .messages .message:hover .text img {
-      display: block; }
-    .messages .message.message-enter {
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    background: url(../imgs/ico_scroll.png) no-repeat top left; }
+
+.messages .message {
+  position: relative;
+  margin: 0 0 30px; }
+  .messages .message .date {
+    font-size: 20px;
+    color: #8e8e8e;
+    line-height: 30px;
+    background: url(../imgs/ico_time.png) no-repeat 0 5px;
+    padding-left: 25px; }
+  .messages .message .text {
+    font-size: 26px;
+    color: #1D1D26;
+    line-height: 30px; }
+    .messages .message .text img {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      display: none;
+      cursor: pointer; }
+  .messages .message:hover .text img {
+    display: block; }
+  .messages .message.message-enter {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s; }
+    .messages .message.message-enter.message-enter-active {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0); }
+  .messages .message.message-leave {
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s; }
+    .messages .message.message-leave.message-leave-active {
       opacity: 0;
-      -webkit-transform: translateX(100px);
-      transform: translateX(100px);
-      transition: opacity 0.5s, -webkit-transform 0.5s;
-      transition: opacity 0.5s, transform 0.5s; }
-      .messages .message.message-enter.message-enter-active {
-        opacity: 1;
-        -webkit-transform: translateX(0);
-        transform: translateX(0); }
-    .messages .message.message-leave {
-      transition: opacity 0.5s, -webkit-transform 0.5s;
-      transition: opacity 0.5s, transform 0.5s; }
-      .messages .message.message-leave.message-leave-active {
-        opacity: 0;
-        -webkit-transform: translateX(-100px);
-        transform: translateX(-100px); }
-  .messages .newMessage {
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px); }
+
+.messages .newMessage {
+  width: 100%;
+  height: 180px;
+  border: 1px solid #bc73ff;
+  padding: 30px 100px 20px 20px;
+  position: relative;
+  margin: 30px 0; }
+  .messages .newMessage textarea {
     width: 100%;
-    height: 180px;
-    border: 1px solid #bc73ff;
-    padding: 30px 100px 20px 20px;
-    position: relative;
-    margin: 30px 0; }
-    .messages .newMessage textarea {
-      width: 100%;
-      height: 130px;
-      font-family: Avenir-Book;
-      font-size: 30px;
-      color: #494949;
-      line-height: 30px;
-      border-style: none;
-      resize: none;
-      outline: none; }
-    .messages .newMessage .counter {
-      font-family: Avenir-Light;
-      font-size: 28px;
-      color: #BA77FF;
-      letter-spacing: 0.28px;
-      line-height: 28px;
-      position: absolute;
-      top: 34px;
-      right: 40px; }
-    .messages .newMessage button {
-      width: 52px;
-      height: 52px;
-      background: url(../imgs/ico_confirm_desktop.png) no-repeat top left;
-      border-style: none;
-      position: absolute;
-      bottom: 25px;
-      right: 30px; }
+    height: 130px;
+    font-family: Avenir-Book;
+    font-size: 30px;
+    color: #494949;
+    line-height: 30px;
+    border-style: none;
+    resize: none;
+    outline: none; }
+  .messages .newMessage .counter {
+    font-family: Avenir-Light;
+    font-size: 28px;
+    color: #BA77FF;
+    letter-spacing: 0.28px;
+    line-height: 28px;
+    position: absolute;
+    top: 34px;
+    right: 40px; }
+  .messages .newMessage button {
+    width: 52px;
+    height: 52px;
+    background: url(../imgs/ico_confirm_desktop.png) no-repeat top left;
+    border-style: none;
+    position: absolute;
+    bottom: 25px;
+    right: 30px; }
 
 .fadeIn-enter, .fadeIn-appear {
   opacity: 0.01;
@@ -5584,11 +5588,5 @@ a:hover {
     .fadeIn-enter.fadeIn-enter-active .slideUp, .fadeIn-enter.fadeIn-appear-active .slideUp, .fadeIn-appear.fadeIn-enter-active .slideUp, .fadeIn-appear.fadeIn-appear-active .slideUp {
       -webkit-transform: translateY(0px);
       transform: translateY(0px); }
-
-.fadeIn-leave {
-  opacity: 1;
-  transition: opacity 0.1s ease-in; }
-  .fadeIn-leave.fadeIn-leave-active {
-    opacity: 0.01; }
 
 /*# sourceMappingURL=app.css.map */
