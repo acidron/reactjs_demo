@@ -11,7 +11,6 @@ var NewMessage = React.createClass({
 		}
 	},
 	typing: function() {
-		console.log('what a fuck');
 		var value = this.refs.text.getDOMNode().value;
 		var newValue = this.props.maxchars - value.length;
 		if (newValue < 0) {
