@@ -46,7 +46,6 @@ var Store = fluxify.createStore({
 					});
 				})
 				.fail(function(resp){
-					console.log(resp.responseJSON);
 					updater.set({
 						errors: true
 					})

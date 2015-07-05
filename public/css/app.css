@@ -5476,17 +5476,6 @@ a:hover {
     @media screen and (max-width: 768px) {
       .pagelayout .body {
         background-color: #ffffff; } }
-    @media screen and (min-width: 768px) {
-      .pagelayout .body {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column; } }
   .pagelayout .header {
     height: 90px;
     background-color: #bc73ff;
@@ -5599,10 +5588,7 @@ a:hover {
   cursor: pointer; }
 
 .newmessagepage .body {
-  background-color: #bc73ff;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
+  background-color: #bc73ff; }
   .newmessagepage .body .newMessage {
     text-align: center; }
     .newmessagepage .body .newMessage textarea {
@@ -5622,6 +5608,18 @@ a:hover {
       margin-top: 200px; }
     .newmessagepage .body .newMessage button {
       display: none; }
+
+@media screen and (min-width: 768px) {
+  .verticalAligned .body {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
 
 .fadeIn-enter, .fadeIn-appear {
   opacity: 0.01;

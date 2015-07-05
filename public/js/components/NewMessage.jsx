@@ -23,13 +23,14 @@ var NewMessage = React.createClass({
 	send: function() {
 		flux.doAction('postMessage', this.state.text);
 	},
+	storeListener: function() {
+		this.setState({text: ''});
+	},
 	componentDidMount: function() {
-		Store.on('messageHasBeenPosted', function(errors) {
-			this.setState({text: ''});
-		}.bind(this));
+		Store.on('messageHasBeenPosted', this.storeListener);
 	},
 	componentWillUnmount: function() {
-		Store.off('messageHasBeenPosted');
+		Store.off('messageHasBeenPosted', this.storeListener);
 	},
 	render: function () {
 		return (

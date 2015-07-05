@@ -6,15 +6,16 @@ var UserName = React.createClass({
 		}
 	},
 	componentDidMount: function() {
-		Store.on('change:profile', function(p) {
-			this.setState({
-				firstname: p.firstname,
-				lastname: p.lastname
-			});
-		}.bind(this));
+		Store.on('change:profile', this.profileChanged);
+	},
+	profileChanged: function(p) {
+		this.setState({
+			firstname: p.firstname,
+			lastname: p.lastname
+		});
 	},
 	componentWillUnmount: function() {
-		Store.off('change:profile');
+		Store.off('change:profile', this.profileChanged);
 	},
 	render: function() {
 		return <span>{this.state.firstname} {this.state.lastname}</span>

@@ -5,15 +5,20 @@ var App = React.createClass({
 			isSignedIn: Store.isSignedIn
 		}
 	},
+	urlListener: function(url) {
+		this.setState({url: url});
+	},
+	signinListener: function(value) {
+		this.setState({isSignedIn: value});
+	},
 	componentWillMount: function() {
-		Store.on('change:url', function(url) {
-			this.setState({url: url});
-		}.bind(this));
-		Store.on('change:isSignedIn', function(value) {
-			this.setState({isSignedIn: value});
-		}.bind(this));
-
+		Store.on('change:url', this.urlListener);
+		Store.on('change:isSignedIn', this.signinListener);
 		flux.doAction('checkAuth');
+	},
+	componentWillUnmount: function() {
+		Store.off('change:url', this.urlListener);
+		Store.off('change:isSignedIn', this.signinListener);
 	},
 	render: function() {
 		var out;

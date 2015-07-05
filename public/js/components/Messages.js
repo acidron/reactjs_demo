@@ -4,16 +4,17 @@ var Messages = React.createClass({
 			messages: Store.messages
 		}
 	},
+	messagesChanged: function(messages) {
+		this.setState({messages: messages});
+	},
 	componentWillMount: function() {
 		flux.doAction('getMessages');
 	},
 	componentDidMount: function() {
-		Store.on('change:messages', function(messages) {
-			this.setState({messages: messages});
-		}.bind(this));
+		Store.on('change:messages', this.messagesChanged);
 	},
 	componentWillUnmount: function() {
-		Store.off('change:messages');
+		Store.off('change:messages', this.messagesChanged);
 	},
 	render: function() {
 		var messages = [];

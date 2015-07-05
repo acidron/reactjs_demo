@@ -6,16 +6,17 @@ var Profile = React.createClass({
 			lastname: Store.profile.lastname
 		}
 	},
+	storeListener: function(p) {
+		this.setState({
+			firstname: p.firstname,
+			lastname: p.lastname
+		});
+	},
 	componentDidMount: function() {
-		Store.on('change:profile', function(p) {
-			this.setState({
-				firstname: p.firstname,
-				lastname: p.lastname
-			});
-		}.bind(this));
+		Store.on('change:profile', this.storeListener);
 	},
 	componentWillUnmount: function() {
-		Store.off('change:profile');
+		Store.off('change:profile', this.storeListener);
 	},
 	doSave: function() {
 		flux.doAction('saveProfile', this.state.firstname, this.state.lastname);

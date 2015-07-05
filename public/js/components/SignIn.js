@@ -10,20 +10,19 @@ var SignIn = React.createClass({
 		flux.doAction('resetUserError');
 	},
 
-
-
 	getInitialState: function() {
 		return {
 			errors: Store.errors
 		}
 	},
+	storeListener: function(errors) {
+		this.setState({errors: errors});
+	},
 	componentDidMount: function() {
-		Store.on('change:errors', function(errors) {
-			this.setState({errors: errors});
-		}.bind(this));
+		Store.on('change:errors', this.storeListener);
 	},
 	componentWillUnmount: function() {
-		Store.off('change:errors');
+		Store.off('change:errors', this.storeListener);
 	},
 
 	getFormCSSClass: function() {
