@@ -213,7 +213,9 @@ a:hover {
 		}
 		position: relative;
 		&:hover .text img {
-			display: block;
+			@media screen and (min-width: $mobilewidth) {
+				display: block;
+			}
 		}
 		margin: 0 0 30px;
 
@@ -270,6 +272,39 @@ a:hover {
 			position: absolute;
 			bottom: 25px;
 			right: 30px;
+		}
+	}
+}
+
+.newmessagepage {
+	.header .container img {
+		cursor: pointer;
+	}
+	.body {
+		background-color: #bc73ff;
+		justify-content: flex-start;
+		.newMessage {
+			text-align: center;
+			textarea {
+				width: 100%;
+				height: 350px;
+				padding: 30px;
+				font-family: Avenir-Book;
+				font-size: 26px;
+				color: #1D1D26;
+				line-height: 30px;
+				display: block;
+			}
+			.counter {
+				font-family: Avenir-Light;
+				font-size: 100px;
+				color: #FFFFFF;
+				line-height: 120px;
+				margin-top: 200px;
+			}
+			button {
+				display: none;
+			}
 		}
 	}
 }

@@ -26,11 +26,17 @@ var Messages = React.createClass({
 				
 					<div className="body">
 						<div className="container">
-							<div className="col-sm-8 col-sm-push-2">
-								<NewMessage />
-								<ReactCSSTransitionGroup transitionName="message">
-								{messages}
-								</ReactCSSTransitionGroup>
+							<div className="row">
+								<div className="hidden-xs col-sm-8 col-sm-push-2">
+									<NewMessage />
+								</div>
+							</div>
+							<div className="row">
+								<div className="col-sm-8 col-sm-push-2">
+									<ReactCSSTransitionGroup transitionName="message">
+									{messages}
+									</ReactCSSTransitionGroup>
+								</div>
 							</div>
 						</div>
 					</div>

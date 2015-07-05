@@ -28,6 +28,9 @@ var App = React.createClass({
 				case 'profile':
 					out = <Profile key="profile"/>;
 					break;
+				case 'new':
+					out = <NewMessagePage key="NewMessagePage"/>;
+					break;
 				default:
 					out = <Messages key="messages"/>;
 					break;

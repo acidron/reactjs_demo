@@ -73,6 +73,7 @@ var Store = fluxify.createStore({
 					// reload messages then
 					this.trigger('messageHasBeenPosted');
 					flux.doAction('getMessages');
+					flux.doAction('gotoUrl', 'messages');
 				}.bind(this))
 				.fail(function() {
 					updater.set({errors: 'Post message failed!'});

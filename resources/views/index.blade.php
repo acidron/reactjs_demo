@@ -12,6 +12,7 @@
 		<script type="text/jsx" src="js/components/SignUp.js"></script>
 		<script type="text/jsx" src="js/components/SignForm.jsx"></script>
 		<script type="text/jsx" src="js/components/NewMessage.jsx"></script>
+		<script type="text/jsx" src="js/components/NewMessagePage.jsx"></script>
 		<script type="text/jsx" src="js/components/Messages.js"></script>
 		<script type="text/jsx" src="js/components/Message.js"></script>
 		<script type="text/jsx" src="js/components/Profile.js"></script>
