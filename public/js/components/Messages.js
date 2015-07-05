@@ -15,9 +15,6 @@ var Messages = React.createClass({
 	componentWillUnmount: function() {
 		Store.off('change:messages');
 	},
-	logout: function() {
-		if (confirm('You are signing out...')) flux.doAction('logout');
-	},
 	render: function() {
 		var messages = [];
 		this.state.messages.map(function(message) {

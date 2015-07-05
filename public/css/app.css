@@ -5499,6 +5499,7 @@ a:hover {
       height: 50px;
       background: url(../imgs/ico_scroll.png) no-repeat top left; }
   .messages .message {
+    position: relative;
     margin: 0 0 30px; }
     .messages .message .date {
       font-size: 20px;
@@ -5510,6 +5511,14 @@ a:hover {
       font-size: 26px;
       color: #1D1D26;
       line-height: 30px; }
+      .messages .message .text img {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        display: none;
+        cursor: pointer; }
+    .messages .message:hover .text img {
+      display: block; }
     .messages .message.message-enter {
       opacity: 0;
       -webkit-transform: translateX(100px);
@@ -5520,10 +5529,13 @@ a:hover {
         opacity: 1;
         -webkit-transform: translateX(0);
         transform: translateX(0); }
-    .messages .message.message-leave.message-leave-active {
-      opacity: 0;
-      -webkit-transform: translateX(-100px);
-      transform: translateX(-100px); }
+    .messages .message.message-leave {
+      transition: opacity 0.5s, -webkit-transform 0.5s;
+      transition: opacity 0.5s, transform 0.5s; }
+      .messages .message.message-leave.message-leave-active {
+        opacity: 0;
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px); }
   .messages .newMessage {
     width: 100%;
     height: 180px;

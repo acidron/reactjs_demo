@@ -179,6 +179,17 @@ a:hover {
 			font-size: 26px;
 			color: #1D1D26;
 			line-height: 30px;
+			img {
+				position:absolute;
+				right: 0;
+				top: 20px;
+				display: none;
+				cursor: pointer;
+			}
+		}
+		position: relative;
+		&:hover .text img {
+			display: block;
 		}
 		margin: 0 0 30px;
 
@@ -192,6 +203,7 @@ a:hover {
 			}
 		}
 		&.message-leave {
+			transition: opacity 0.5s, transform 0.5s;
 			&.message-leave-active {
 				opacity: 0;
 				transform: translateX(-100px);

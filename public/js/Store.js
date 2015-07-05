@@ -12,7 +12,6 @@ var Store = fluxify.createStore({
 	},
 	actionCallbacks: {
 		gotoUrl: function(updater, urlToGo) {
-			console.log('goto url', urlToGo);
 			updater.set({url: urlToGo});
 		},
 
@@ -79,6 +78,28 @@ var Store = fluxify.createStore({
 					updater.set({errors: 'Post message failed!'});
 				});
 		},
+		deleteMessage: function(updater, id) {
+			$.ajax('messages/' + id, {method: 'DELETE'})
+				.then(function() {
+					var index;
+					for (var i in this.messages) {
+						if (this.messages[i].id == id) {
+							index = i;
+							break;
+						}
+					}
+					if (index != undefined) {
+						var newMessages = this.messages.slice(); //slice is to clone array
+						newMessages.splice(index, 1);
+						updater.set({
+							messages: newMessages
+						});
+					}
+				}.bind(this))
+				.error(function(response){
+					console.log('Error on deleting', response);
+				});			
+		},
 		logout: function(updater) {
 			$.get('auth/logout').success(function() {
 				updater.set({
@@ -91,4 +112,3 @@ var Store = fluxify.createStore({
 
 	}
 });
-console.log('Store created!!', Store.getState());
