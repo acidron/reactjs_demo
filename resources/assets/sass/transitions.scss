@@ -14,11 +14,3 @@
 		}
 	}
 }
-
-.fadeIn-leave {
-	opacity: 1;
-	transition: opacity 0.1s ease-in;
-	&.fadeIn-leave-active {
-		opacity: 0.01;
-	}
-}

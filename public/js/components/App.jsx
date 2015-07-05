@@ -36,7 +36,7 @@ var App = React.createClass({
 			out = <PleaseWait />;
 		}
 		return (
-			<ReactCSSTransitionGroup transitionName="fadeIn" transitionAppear={true}>
+			<ReactCSSTransitionGroup transitionName="fadeIn" transitionAppear={true} transitionLeave={false}>
 				{out}
 			</ReactCSSTransitionGroup>
 		);
