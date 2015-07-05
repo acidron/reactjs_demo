@@ -35,13 +35,12 @@ var Store = fluxify.createStore({
 		signIn: function(updater, credentials) {
 			$.post('auth/login', credentials)
 				.success(function(response) {
-					console.log('SUCCESS!', response);
 					updater.set({
 						isSignedIn: true,
 						url: 'messages',
 						profile: {
-							firstName: response.firstname,
-							lastName: response.lastname,
+							firstname: response.firstname,
+							lastname: response.lastname,
 						}
 					});
 				})
@@ -50,6 +49,26 @@ var Store = fluxify.createStore({
 						errors: true
 					})
 				});
+		},
+
+		signUp: function(updater, data) {
+			data.password_confirmation = data.password;
+			$.post('auth/register', data)
+				.success(function() {
+					updater.set({
+						isSignedIn: true,
+						url: 'messages',
+						profile: {
+							firstname: data.firstname,
+							lastname: data.lastname,
+						}
+					});
+				})
+				.fail(function(resp) {
+					updater.set({
+						errors: true
+					})
+				})
 		},
 
 		signOut: function(updater) {

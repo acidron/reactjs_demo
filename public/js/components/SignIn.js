@@ -48,7 +48,7 @@ var SignIn = React.createClass({
 		})
 
 		return (
-			<div key="signIn" className="container">
+			<div className="container">
 				<Logo />
 			
 				<div className="row">
