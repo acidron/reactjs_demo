@@ -107,8 +107,8 @@ var Store = fluxify.createStore({
 				lastname: lastname
 			};
 			$.ajax('profile', {method: 'PUT', data: payload})
-					updater.set({profile: payload})
 				.then(function() {
+					updater.set({profile: payload})
 				})
 				.fail(function(response) {
 					console.log('Error on updating profile.', response);
