@@ -1,14 +1,27 @@
 # Backend
-Backend написан на Laravel 5. После развертывания тесты API запускаются командой phpunit
+Backend написан на Laravel 5.
+
+Установка composer: 
+
+    curl -sS https://getcomposer.org/installer | php
+
+
+Установка пакетов: 
+
+    php composer.phar install
+
+Прогон тестов:
+
+    phpunit
 
 # Database
 
 База данных на sqlite3. Файл базы в storage/database.sqlite.
 Для тестового заполнения надо выполнить команды
 
-php artisan migrate:reset
-php artisan migrate
-php artisan db:seed
+    php artisan migrate:reset
+    php artisan migrate
+    php artisan db:seed
 
 
 # Frontend
